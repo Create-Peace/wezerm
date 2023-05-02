@@ -151,7 +151,6 @@ config.colors = {
     },
   },
 }
-config.window_background_image = './forest.jpg'
 
 config.window_background_image_hsb = {
   -- Darken the background image by reducing it to 1/3rd
@@ -202,8 +201,7 @@ config.launch_menu = launch_menu
 config.window_background_image = 'C:/Users/Administrator/.config/wezterm/images/code-wallpaper-6.png'
 config.window_background_opacity = 0.9
 config.color_scheme = 'AdventureTime'
-
--- config.default_prog = {'porwershell'}
+config.default_prog = {'PowerShell'}
 
 
 return config
