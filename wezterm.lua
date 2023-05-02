@@ -169,13 +169,13 @@ config.keys = {
 
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  ssh_cmd = { "powershell.exe" }
+  ssh_cmd = { "pwsh.exe" }
 
   table.insert(
     launch_menu,
     {
       label = "PowerShell",
-      args = { "powershell.exe", "-NoLogo" }
+      args = { "D:/Program Files/PowerShell/7/pwsh.exe", "-NoLogo" }
     }
   )
 
@@ -199,9 +199,9 @@ end
 
 config.launch_menu = launch_menu
 config.window_background_image = 'C:/Users/Administrator/.config/wezterm/images/code-wallpaper-6.png'
-config.window_background_opacity = 0.9
+-- config.window_background_opacity = 0.9
 config.color_scheme = 'AdventureTime'
-config.default_prog = {'PowerShell'}
+config.default_prog = {'pwsh'}
 
 
 return config
