@@ -1,5 +1,20 @@
 local wezterm = require 'wezterm'
-local config = {}
+local config = {
+  native_macos_fullscreen_mode = true,
+  adjust_window_size_when_changing_font_size = true,
+  window_background_opacity = 0.95, -- 如果设置为1.0会明显卡顿
+  window_padding = {
+      left = 5,
+      right = 5,
+      top = 5,
+      bottom = 5
+  },
+  window_background_image_hsb = {
+      brightness = 0.8,
+      hue = 1.0,
+      saturation = 1.0
+  },
+}
 local launch_menu = {}
 
 
@@ -194,14 +209,21 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
       args = { "cmd.exe" }
     }
   )
+  config.default_prog = {'pwsh'}
+
+  elseif wezterm.target_triple == 'aarch64-apple-darwin' then
+    table.insert(launch_menu, {
+        label = 'bash',
+        args = {'/bin/bash', '-l'}
+    })
+    default_prog = {'/bin/bash', '-l'}
 end
 
 
 config.launch_menu = launch_menu
-config.window_background_image = 'C:/Users/Administrator/.config/wezterm/images/code-wallpaper-6.png'
+config.window_background_image = wezterm.home_dir .. "/.config/wezterm/images/code-wallpaper-6.png"
 -- config.window_background_opacity = 0.9
 config.color_scheme = 'AdventureTime'
-config.default_prog = {'pwsh'}
 
 
 return config
