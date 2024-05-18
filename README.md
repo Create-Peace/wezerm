@@ -1,2 +1,2 @@
-# wezerm
+# wezerm-config
 wezerm config
